@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 974390739202541342}
   - component: {fileID: 7588234273590974354}
   - component: {fileID: 4407268207731835481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 1919461544989601251}
   - component: {fileID: 7683794465752342066}
   - component: {fileID: 3027691068753931242}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cylinder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -201,9 +201,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3753608376224672612}
   - component: {fileID: 3284565138909035268}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: AppleTree
-  m_TagString: Untagged
+  m_TagString: AppleTree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

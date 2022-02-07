@@ -3,7 +3,7 @@
  * Date Created 1/31/2022
  * 
  * Last Edited by: NA
- * Last Edited: 1/31/2022
+ * Last Edited: 2/04/2022
  * 
  * Description: Controls the movement of the AppleTree
  */
@@ -21,14 +21,27 @@ public class AppleTree : MonoBehaviour
     public float speed = 1f; //tree speed
     public float leftAndRightEdge = 10f; //distance where the tree turns around
     public GameObject applePreFab; //prefab for instantiating apples
+<<<<<<< HEAD
     public float secondsBetweenApplesDrops = 1f; // time between apples dropped
     public float chanceToChangeDirection = 0.02f; //chance the tree changes direction (left and right)
+=======
+    public float secondsBetweenAppleDrops = 1f; // time between apples dropped
+    public float chanceToChangeDirections = 0.02f; //chance the tree changes direction (left and right)
+>>>>>>> e7be4cdcce0b5fb090b59df686d9d293a3a4efd8
 
 
     // Start is called before the first frame update
     void Start()
     {
+        // Dropping apples every second
+        Invoke("DropApple", 2f);
+    }
 
+    void DropApple()
+    {
+        GameObject apple = Instantiate<GameObject>(applePreFab);
+        apple.transform.position = transform.position;
+        Invoke("DropApple", secondsBetweenAppleDrops);
     }
 
     // Update is called once per frame
@@ -42,17 +55,21 @@ public class AppleTree : MonoBehaviour
         //Change Direction
         if (pos.x < -leftAndRightEdge)
         {
-            speed = Mathf.Abs(speed); //set speed to positive
+            speed = Mathf.Abs(speed); //set speed to positive (Move Right)
         }
         else if (pos.x > leftAndRightEdge)
         {
-            speed = -Mathf.Abs(speed); //set speed to negative value
-        } //end Change Directions
-
-
+            speed = -Mathf.Abs(speed); //set speed to negative value (Move Left)
+        }
+        else if (Random.value < chanceToChangeDirections)
+        {
+            speed *= -1;
+        }
+ //end Change Directions
     }//end Update
 
     //FixedUpdate is called pn fixed intervals (50 times per second)
+<<<<<<< HEAD
     private void FixedUpdate()
     {
         if (Random.value < chanceToChangeDirection)
@@ -60,4 +77,14 @@ public class AppleTree : MonoBehaviour
             speed *= -1;
         }
     }
+=======
+    void FixedUpdate()
+    {
+        if(Random.value < chanceToChangeDirections)
+        {
+            speed *= -1; //Change direction
+        } // End Random.value < changeToChangeDirections
+    } // End FixedUpdate()
+
+>>>>>>> e7be4cdcce0b5fb090b59df686d9d293a3a4efd8
 }
