@@ -22,7 +22,7 @@ public class AppleTree : MonoBehaviour
     public float leftAndRightEdge = 10f; //distance where the tree turns around
     public GameObject applePreFab; //prefab for instantiating apples
     public float secondsBetweenApplesDrops = 1f; // time between apples dropped
-    public float chanceToChangeDirection = 0.1f; //chance the tree changes direction (left and right)
+    public float chanceToChangeDirection = 0.02f; //chance the tree changes direction (left and right)
 
 
     // Start is called before the first frame update
@@ -53,8 +53,11 @@ public class AppleTree : MonoBehaviour
     }//end Update
 
     //FixedUpdate is called pn fixed intervals (50 times per second)
-    if(Random.value < chanceToChangeDirection){
-
-        speed *= -1;
-
+    private void FixedUpdate()
+    {
+        if (Random.value < chanceToChangeDirection)
+        {
+            speed *= -1;
+        }
+    }
 }
