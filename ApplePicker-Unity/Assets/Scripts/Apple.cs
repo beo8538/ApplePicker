@@ -30,8 +30,7 @@ public class Apple : MonoBehaviour
         if(transform.position.y < bottomY)
         {
             Destroy(this.gameObject); //destroys the apple once it passes the bottom
-            GameObject GameManager = GameObject.Find("GameManager");
-            ApplePicker apScript = GameManager.GetComponent<ApplePicker>();
+            ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
             apScript.AppleDestroyed();
         }
     }
