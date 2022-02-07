@@ -22,7 +22,7 @@ public class AppleTree : MonoBehaviour
     public float leftAndRightEdge = 10f; //distance where the tree turns around
     public GameObject applePreFab; //prefab for instantiating apples
     public float secondsBetweenAppleDrops = 1f; // time between apples dropped
-    public float chanceToChangeDirections = 0.1f; //chance the tree changes direction (left and right)
+    public float chanceToChangeDirections = 0.02f; //chance the tree changes direction (left and right)
 
 
     // Start is called before the first frame update

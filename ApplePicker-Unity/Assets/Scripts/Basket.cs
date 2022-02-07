@@ -3,7 +3,7 @@
  * Date Created 2/04/2022
  * 
  * Last Edited by: NA
- * Last Edited: 2/04/2022
+ * Last Edited: 2/07/2022
  * 
  * Description: moves the basket
  */
@@ -12,13 +12,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Basket : MonoBehaviour
 {
+
+    [Header("Set Dynamically")]
+    public Text scoreGT;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject scoreGO = GameObject.Find("ScoreCounter"); //score game object
+        scoreGT = scoreGO.GetComponent<Text>(); //the text component of the score GO
+        scoreGT.text = "0"; //set the text property
     }
 
     // Update is called once per frame
@@ -46,6 +53,10 @@ public class Basket : MonoBehaviour
         if(collideWith.tag == "Apple") //assigns collideWith to Apples
         {
             Destroy(collideWith); //destroys the apples
+
+            int score = int.Parse(scoreGT.text);
+            score += 100;
+            scoreGT.text = score.ToString();
         }
     }
 }

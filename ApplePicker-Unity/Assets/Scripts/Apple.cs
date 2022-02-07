@@ -3,7 +3,7 @@
  * Date Created 2/04/2022
  * 
  * Last Edited by: NA
- * Last Edited: 2/04/2022
+ * Last Edited: 2/07/2022
  * 
  * Description: Controls creation and deletion of apples
  */
@@ -30,6 +30,9 @@ public class Apple : MonoBehaviour
         if(transform.position.y < bottomY)
         {
             Destroy(this.gameObject); //destroys the apple once it passes the bottom
+            GameObject GameManager = GameObject.Find("GameManager");
+            ApplePicker apScript = GameManager.GetComponent<ApplePicker>();
+            apScript.AppleDestroyed();
         }
     }
 }
