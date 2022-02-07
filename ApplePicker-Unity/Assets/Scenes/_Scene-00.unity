@@ -333,11 +333,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a95fbf83405e045b5d9fdaddbc32f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  leftAndRightEdge: 10
+  speed: 10
+  leftAndRightEdge: 20
   applePreFab: {fileID: 4589960066259926771, guid: be8252c8263930b41bb40d8228765619, type: 3}
   secondsBetweenAppleDrops: 1
-  chanceToChangeDirections: 0.2
+  chanceToChangeDirections: 0.02
 --- !u!1 &1095809962
 GameObject:
   m_ObjectHideFlags: 0
